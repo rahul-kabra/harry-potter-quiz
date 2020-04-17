@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔮 Harry Potter Quiz 🔮</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id="navbar-container">
+        <h1>🔮 Harry Potter Quiz 🔮</h1>
+        <div id="solutions">
+            <p><span class="fa fa-question-circle"></span></p>
+        </div>
+        <div id="theme" onclick="toggleThemeMode()">
+            <p><span class="fa fa-adjust"></span></p>
+        </div>
+        <div id="about">
+            <p><span class="fa fa-info-circle"></span></p>
+        </div>
+    </div>
+    <div id="data-container">
+        <div id="input-container" class="input-field">
+            <label>
+                <p class="label-txt" style="padding-left: 0;">Enter answers here..</p>
+                <input type="text" id="userInput" class="input" style="padding-left: 0;" onkeydown="checkVal()">
+                <div class="line-box">
+                    <div class="line"></div>
+                </div>
+            </label>
+            <button id="answer" onclick="onAnswerSubmit()"><span>Submit</span></button>
+        </div>
+    </div>
+
+    <div class="periodic-table">
+        <div class="blank-gutter-row-1"></div>
+        <div class="blank-gutter-row-2"></div>
+        <div class="blank-gutter-row-3"></div>
+        <div class="blank-gutter-row-6"></div>
+        <div class="blank-gutter-row-7-a"></div>
+        <div class="blank-gutter-row-7-b"></div>
+        <div class="blank-gutter-row-8"></div>
+        <div class="blank-gutter-row-9"></div>
+
+        <!-- Row 1 -->
+        <div id="element_1" class="module-border-wrap gryffindor">
+            <div class="module-element">
+                <div id="element_1_content" class="module-element-content">
+                    <div class="title">H</div>
+                    <div class="description">
+                        <label id="harry"> </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_2" class="module-border-wrap gryffindor">
+            <div class="module-element">
+                <div id="element_2_content" class="module-element-content">
+                    <div class="title">He</div>
+                    <div class="description">
+                        <label id="hermione"> </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 2 -->
+        <div id="element_3" class="module-border-wrap gryffindor">
+            <div class="module-element">
+                <div id="element_3_content" class="module-element-content">
+                    <div class="title">Li</div>
+                    <div class="description">
+                        <label id="lily"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_4" class="module-border-wrap death-eater">
+            <div class="module-element">
+                <div id="element_4_content" class="module-element-content">
+                    <div class="title">Be</div>
+                    <div class="description">
+                        <label id="bellatrix"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_5" class="module-border-wrap ministry">
+            <div class="module-element">
+                <div id="element_5_content" class="module-element-content">
+                    <div class="title">B</div>
+                    <div class="description">
+                        <label id="barty"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_6" class="module-border-wrap ravenclaw">
+            <div class="module-element">
+                <div id="element_6_content" class="module-element-content">
+                    <div class="title">C</div>
+                    <div class="description">
+                        <label id="cho"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_7" class="module-border-wrap slytherin">
+            <div class="module-element">
+                <div id="element_7_content" class="module-element-content">
+                    <div class="title">N</div>
+                    <div class="description">
+                        <label id="nott"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_8" class="module-border-wrap ravenclaw">
+            <div class="module-element">
+                <div id="element_8_content" class="module-element-content">
+                    <div class="title">O</div>
+                    <div class="description">
+                        <label id="ollivander"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_9" class="module-border-wrap beauxbatons">
+            <div class="module-element">
+                <div id="element_9_content" class="module-element-content">
+                    <div class="title">F</div>
+                    <div class="description">
+                        <label id="fleur"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_10" class="module-border-wrap gryffindor">
+            <div class="module-element">
+                <div id="element_10_content" class="module-element-content">
+                    <div class="title">Ne</div>
+                    <div class="description">
+                        <label id="neville"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 3 -->
+        <div id="element_11" class="module-border-wrap slytherin">
+            <div class="module-element">
+                <div id="element_11_content" class="module-element-content">
+                    <div class="title">Na</div>
+                    <div class="description"><label id="narcissa"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_12" class="module-border-wrap centaur">
+            <div class="module-element">
+                <div id="element_12_content" class="module-element-content">
+                    <div class="title">Mg</div>
+                    <div class="description"><label id="magorian"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_13" class="module-border-wrap gryffindor">
+            <div class="module-element">
+                <div id="element_13_content" class="module-element-content">
+                    <div class="title">Al</div>
+                    <div class="description"><label id="albus"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_14" class="module-border-wrap gryffindor">
+            <div class="module-element">
+                <div id="element_14_content" class="module-element-content">
+                    <div class="title">Si</div>
+                    <div class="description"><label id="spinnet"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_15" class="module-border-wrap unknown">
+            <div class="module-element">
+                <div id="element_15_content" class="module-element-content">
+                    <div class="title">P</div>
+                    <div class="description"><label id="percival"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_16" class="module-border-wrap unknown">
+            <div class="module-element">
+                <div id="element_16_content" class="module-element-content">
+                    <div class="title">S</div>
+                    <div class="description"><label id="skeeter"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_17" class="module-border-wrap gryffindor">
+            <div class="module-element">
+                <div id="element_17_content" class="module-element-content">
+                    <div class="title">Cl</div>
+                    <div class="description"><label id="charlie"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_18" class="module-border-wrap muggle">
+            <div class="module-element">
+                <div id="element_18_content" class="module-element-content">
+                    <div class="title">Ar</div>
+                    <div class="description"><label id="argus"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 4 -->
+        <div id="element_19" class="module-border-wrap houseelf">
+            <div class="module-element">
+                <div id="element_19_content" class="module-element-content">
+                    <div class="title">K</div>
+                    <div class="description"><label id="kreacher"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_20" class="module-border-wrap ministry">
+            <div class="module-element">
+                <div id="element_20_content" class="module-element-content">
+                    <div class="title">Ca</div>
+                    <div class="description"><label id="cattermole"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_21" class="module-border-wrap slytherin">
+            <div class="module-element">
+                <div id="element_21_content" class="module-element-content">
+                    <div class="title">Sc</div>
+                    <div class="description"><label id="scorpius"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_22" class="module-border-wrap unknown">
+            <div class="module-element">
+                <div id="element_22_content" class="module-element-content">
+                    <div class="title">Ti</div>
+                    <div class="description"><label id="timms"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_23" class="module-border-wrap slytherin">
+            <div class="module-element">
+                <div id="element_23_content" class="module-element-content">
+                    <div class="title">V</div>
+                    <div class="description"><label id="voldemort"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_24" class="module-border-wrap slytherin">
+            <div class="module-element">
+                <div id="element_24_content" class="module-element-content">
+                    <div class="title">Cr</div>
+                    <div class="description"><label id="crabbe"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_25" class="module-border-wrap gryffindor">
+            <div class="module-element">
+                <div id="element_25_content" class="module-element-content">
+                    <div class="title">Mn</div>
+                    <div class="description"><label id="minerva"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_26" class="module-border-wrap centaur">
+            <div class="module-element">
+                <div id="element_26_content" class="module-element-content">
+                    <div class="title">Fe</div>
+                    <div class="description"><label id="firenze"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_27" class="module-border-wrap ministry">
+            <div class="module-element">
+                <div id="element_27_content" class="module-element-content">
+                    <div class="title">Co</div>
+                    <div class="description"><label id="cornelius"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_28" class="module-border-wrap creatures">
+            <div class="module-element">
+                <div id="element_28_content" class="module-element-content">
+                    <div class="title">Ni</div>
+                    <div class="description"><label id="nagini"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_29" class="module-border-wrap unknown">
+            <div class="module-element">
+                <div id="element_29_content" class="module-element-content">
+                    <div class="title">Cu</div>
+                    <div class="description"><label id="cuffe"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_30" class="module-border-wrap slytherin">
+            <div class="module-element">
+                <div id="element_30_content" class="module-element-content">
+                    <div class="title">Zn</div>
+                    <div class="description"><label id="zabini"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_31" class="module-border-wrap slytherin">
+            <div class="module-element">
+                <div id="element_31_content" class="module-element-content">
+                    <div class="title">Ga</div>
+                    <div class="description"><label id="gaunt"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_32" class="module-border-wrap gryffindor">
+            <div class="module-element">
+                <div id="element_32_content" class="module-element-content">
+                    <div class="title">Ge</div>
+                    <div class="description"><label id="george"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_33" class="module-border-wrap teachers">
+            <div class="module-element">
+                <div id="element_33_content" class="module-element-content">
+                    <div class="title">As</div>
+                    <div class="description"><label id="amycus"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_34" class="module-border-wrap slytherin">
+            <div class="module-element">
+                <div id="element_34_content" class="module-element-content">
+                    <div class="title">Se</div>
+                    <div class="description"><label id="severus"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_35" class="module-border-wrap gryffindor">
+            <div class="module-element">
+                <div id="element_35_content" class="module-element-content">
+                    <div class="title">Br</div>
+                    <div class="description"><label id="brown"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_36" class="module-border-wrap durmstrang">
+            <div class="module-element">
+                <div id="element_36_content" class="module-element-content">
+                    <div class="title">Kr</div>
+                    <div class="description"><label id="krum"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 5 -->
+        <div id="element_37" class="module-border-wrap slytherin">
+            <div class="module-element">
+                <div id="element_37_content" class="module-element-content">
+                    <div class="title">Rb</div>
+                    <div class="description"><label id="regulus"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_38" class="module-border-wrap gryffindor">
+            <div class="module-element">
+                <div id="element_38_content" class="module-element-content">
+                    <div class="title">Sr</div>
+                    <div class="description"><label id="sirius"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_39" class="module-border-wrap ministry">
+            <div class="module-element">
+                <div id="element_39_content" class="module-element-content">
+                    <div class="title">Y</div>
+                    <div class="description"><label id="yaxley"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_40" class="module-border-wrap hufflepuff">
+            <div class="module-element">
+                <div id="element_40_content" class="module-element-content">
+                    <div class="title">Zr</div>
+                    <div class="description"><label id="zacharias"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_41" class="module-border-wrap creatures">
+            <div class="module-element">
+                <div id="element_41_content" class="module-element-content">
+                    <div class="title">Nb</div>
+                    <div class="description"><label id="norbert"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_42" class="module-border-wrap gryffindor">
+            <div class="module-element">
+                <div id="element_42_content" class="module-element-content">
+                    <div class="title">Mo</div>
+                    <div class="description"><label id="molly"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_43" class="module-border-wrap ministry">
+            <div class="module-element">
+                <div id="element_43_content" class="module-element-content">
+                    <div class="title">Tc</div>
+                    <div class="description"><label id="twycross"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_44" class="module-border-wrap gryffindor">
+            <div class="module-element">
+                <div id="element_44_content" class="module-element-content">
+                    <div class="title">Ru</div>
+                    <div class="description"><label id="remus"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_45" class="module-border-wrap death-eater">
+            <div class="module-element">
+                <div id="element_45_content" class="module-element-content">
+                    <div class="title">Rh</div>
+                    <div class="description"><label id="rodolphus"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_46" class="module-border-wrap gryffindor">
+            <div class="module-element">
+                <div id="element_46_content" class="module-element-content">
+                    <div class="title">Pd</div>
+                    <div class="description"><label id="padma"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_47" class="module-border-wrap creatures">
+            <div class="module-element">
+                <div id="element_47_content" class="module-element-content">
+                    <div class="title">Ag</div>
+                    <div class="description"><label id="aragog"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_48" class="module-border-wrap hufflepuff">
+            <div class="module-element">
+                <div id="element_48_content" class="module-element-content">
+                    <div class="title">Cd</div>
+                    <div class="description"><label id="cedric"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_49" class="module-border-wrap unknown">
+            <div class="module-element">
+                <div id="element_49_content" class="module-element-content">
+                    <div class="title">In</div>
+                    <div class="description"><label id="ignotus"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_50" class="module-border-wrap slytherin">
+            <div class="module-element">
+                <div id="element_50_content" class="module-element-content">
+                    <div class="title">Sn</div>
+                    <div class="description"><label id="slytherin"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_51" class="module-border-wrap ministry">
+            <div class="module-element">
+                <div id="element_51_content" class="module-element-content">
+                    <div class="title">Sb</div>
+                    <div class="description"><label id="shacklebolt"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_52" class="module-border-wrap muggle">
+            <div class="module-element">
+                <div id="element_52_content" class="module-element-content">
+                    <div class="title">Te</div>
+                    <div class="description"><label id="ted"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_53" class="module-border-wrap durmstrang">
+            <div class="module-element">
+                <div id="element_53_content" class="module-element-content">
+                    <div class="title">I</div>
+                    <div class="description"><label id="ivanova"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_54" class="module-border-wrap unknown">
+            <div class="module-element">
+                <div id="element_54_content" class="module-element-content">
+                    <div class="title">Xe</div>
+                    <div class="description"><label id="xenophilius"></label></div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Row 6 -->
+        <div id="element_55" class="module-border-wrap ministry">
+            <div class="module-element">
+                <div id="element_55_content" class="module-element-content">
+                    <div class="title">Cs</div>
+                    <div class="description"><label id="cresswell"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_56" class="module-border-wrap ministry">
+            <div class="module-element">
+                <div id="element_56_content" class="module-element-content">
+                    <div class="title">Ba</div>
+                    <div class="description"><label id="bagman"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_57" class="module-border-wrap hufflepuff">
+            <div class="module-element">
+                <div id="element_57_content" class="module-element-content">
+                    <div class="title">Hf</div>
+                    <div class="description"><label id="hufflepuff"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_58" class="module-border-wrap death-eater">
+            <div class="module-element">
+                <div id="element_58_content" class="module-element-content">
+                    <div class="title">Ta</div>
+                    <div class="description"><label id="travers"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_59" class="module-border-wrap gryffindor">
+            <div class="module-element">
+                <div id="element_59_content" class="module-element-content">
+                    <div class="title">W</div>
+                    <div class="description"><label id="ginny"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_60" class="module-border-wrap unknown">
+            <div class="module-element">
+                <div id="element_60_content" class="module-element-content">
+                    <div class="title">Re</div>
+                    <div class="description"><label id="rosmerta"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_61" class="module-border-wrap ministry">
+            <div class="module-element">
+                <div id="element_61_content" class="module-element-content">
+                    <div class="title">Os</div>
+                    <div class="description"><label id="amos"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_62" class="module-border-wrap durmstrang">
+            <div class="module-element">
+                <div id="element_62_content" class="module-element-content">
+                    <div class="title">Ir</div>
+                    <div class="description"><label id="igor"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_63" class="module-border-wrap gryffindor">
+            <div class="module-element">
+                <div id="element_63_content" class="module-element-content">
+                    <div class="title">Pt</div>
+                    <div class="description"><label id="pettigrew"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_64" class="module-border-wrap unknown">
+            <div class="module-element">
+                <div id="element_64_content" class="module-element-content">
+                    <div class="title">Au</div>
+                    <div class="description"><label id="aubrey"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_65" class="module-border-wrap gryffindor">
+            <div class="module-element">
+                <div id="element_65_content" class="module-element-content">
+                    <div class="title">Hg</div>
+                    <div class="description"><label id="hagrid"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_66" class="module-border-wrap ravenclaw">
+            <div class="module-element">
+                <div id="element_66_content" class="module-element-content">
+                    <div class="title">Tl</div>
+                    <div class="description"><label id="trelawney"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_67" class="module-border-wrap slytherin">
+            <div class="module-element">
+                <div id="element_67_content" class="module-element-content">
+                    <div class="title">Pb</div>
+                    <div class="description"><label id="phineas"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_68" class="module-border-wrap gryffindor">
+            <div class="module-element">
+                <div id="element_68_content" class="module-element-content">
+                    <div class="title">Bi</div>
+                    <div class="description"><label id="bill"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_69" class="module-border-wrap gryffindor">
+            <div class="module-element">
+                <div id="element_69_content" class="module-element-content">
+                    <div class="title">Po</div>
+                    <div class="description"><label id="james"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_70" class="module-border-wrap gryffindor">
+            <div class="module-element">
+                <div id="element_70_content" class="module-element-content">
+                    <div class="title">At</div>
+                    <div class="description"><label id="arthur"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_71" class="module-border-wrap gryffindor">
+            <div class="module-element">
+                <div id="element_71_content" class="module-element-content">
+                    <div class="title">Rn</div>
+                    <div class="description"><label id="ron"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 7 -->
+        <div id="element_72" class="module-border-wrap gryffindor">
+            <div class="module-element">
+                <div id="element_72_content" class="module-element-content">
+                    <div class="title">Fr</div>
+                    <div class="description"><label id="fred"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_73" class="module-border-wrap ravenclaw">
+            <div class="module-element">
+                <div id="element_73_content" class="module-element-content">
+                    <div class="title">Ra</div>
+                    <div class="description"><label id="ravenclaw"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_74" class="module-border-wrap ministry">
+            <div class="module-element">
+                <div id="element_74_content" class="module-element-content">
+                    <div class="title">Rf</div>
+                    <div class="description"><label id="rufus"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_75" class="module-border-wrap houseelf">
+            <div class="module-element">
+                <div id="element_75_content" class="module-element-content">
+                    <div class="title">Db</div>
+                    <div class="description"><label id="dobby"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_76" class="module-border-wrap order">
+            <div class="module-element">
+                <div id="element_76_content" class="module-element-content">
+                    <div class="title">Sg</div>
+                    <div class="description"><label id="sturgis"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_77" class="module-border-wrap unknown">
+            <div class="module-element">
+                <div id="element_77_content" class="module-element-content">
+                    <div class="title">Bh</div>
+                    <div class="description"><label id="bagshot"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_78" class="module-border-wrap order">
+            <div class="module-element">
+                <div id="element_78_content" class="module-element-content">
+                    <div class="title">Hs</div>
+                    <div class="description"><label id="hestia"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_79" class="module-border-wrap ghost">
+            <div class="module-element">
+                <div id="element_79_content" class="module-element-content">
+                    <div class="title">Mt</div>
+                    <div class="description"><label id="myrtle"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_80" class="module-border-wrap order">
+            <div class="module-element">
+                <div id="element_80_content" class="module-element-content">
+                    <div class="title">Ds</div>
+                    <div class="description"><label id="dedalus"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_81" class="module-border-wrap ravenclaw">
+            <div class="module-element">
+                <div id="element_81_content" class="module-element-content">
+                    <div class="title">Rg</div>
+                    <div class="description"><label id="roger"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 8 -->
+        <div id="element_82" class="module-border-wrap hufflepuff">
+            <div class="module-element">
+                <div id="element_82_content" class="module-element-content">
+                    <div class="title">La</div>
+                    <div class="description"><label id="leanne"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_83" class="module-border-wrap gryffindor">
+            <div class="module-element">
+                <div id="element_83_content" class="module-element-content">
+                    <div class="title">Ce</div>
+                    <div class="description"><label id="creevey"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_84" class="module-border-wrap gryffindor">
+            <div class="module-element">
+                <div id="element_84_content" class="module-element-content">
+                    <div class="title">Pr</div>
+                    <div class="description"><label id="parvati"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_85" class="module-border-wrap hufflepuff">
+            <div class="module-element">
+                <div id="element_85_content" class="module-element-content">
+                    <div class="title">Nd</div>
+                    <div class="description"><label id="nymphadora"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_86" class="module-border-wrap unknown">
+            <div class="module-element">
+                <div id="element_86_content" class="module-element-content">
+                    <div class="title">Pm</div>
+                    <div class="description"><label id="pomfrey"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_87" class="module-border-wrap gryffindor">
+            <div class="module-element">
+                <div id="element_87_content" class="module-element-content">
+                    <div class="title">Sm</div>
+                    <div class="description"><label id="seamus"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_88" class="module-border-wrap ravenclaw">
+            <div class="module-element">
+                <div id="element_88_content" class="module-element-content">
+                    <div class="title">Eu</div>
+                    <div class="description"><label id="edgecombe"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_89" class="module-border-wrap ravenclaw">
+            <div class="module-element">
+                <div id="element_89_content" class="module-element-content">
+                    <div class="title">Gd</div>
+                    <div class="description"><label id="gilderoy"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_90" class="module-border-wrap ravenclaw">
+            <div class="module-element">
+                <div id="element_90_content" class="module-element-content">
+                    <div class="title">Tb</div>
+                    <div class="description"><label id="terry"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_91" class="module-border-wrap muggle">
+            <div class="module-element">
+                <div id="element_91_content" class="module-element-content">
+                    <div class="title">Dy</div>
+                    <div class="description"><label id="dudley"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_92" class="module-border-wrap slytherin">
+            <div class="module-element">
+                <div id="element_92_content" class="module-element-content">
+                    <div class="title">Ho</div>
+                    <div class="description"><label id="horace"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_93" class="module-border-wrap hufflepuff">
+            <div class="module-element">
+                <div id="element_93_content" class="module-element-content">
+                    <div class="title">Er</div>
+                    <div class="description"><label id="ernie"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_94" class="module-border-wrap slytherin">
+            <div class="module-element">
+                <div id="element_94_content" class="module-element-content">
+                    <div class="title">Tm</div>
+                    <div class="description"><label id="tom"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_95" class="module-border-wrap teachers">
+            <div class="module-element">
+                <div id="element_95_content" class="module-element-content">
+                    <div class="title">Yb</div>
+                    <div class="description"><label id="beery"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_96" class="module-border-wrap ravenclaw">
+            <div class="module-element">
+                <div id="element_96_content" class="module-element-content">
+                    <div class="title">Lu</div>
+                    <div class="description"><label id="luna"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Row 9 -->
+        <div id="element_97" class="module-border-wrap teachers">
+            <div class="module-element">
+                <div id="element_97_content" class="module-element-content">
+                    <div class="title">Ac</div>
+                    <div class="description"><label id="alecto"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_98" class="module-border-wrap gryffindor">
+            <div class="module-element">
+                <div id="element_98_content" class="module-element-content">
+                    <div class="title">Th</div>
+                    <div class="description"><label id="thomas"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_99" class="module-border-wrap slytherin">
+            <div class="module-element">
+                <div id="element_99_content" class="module-element-content">
+                    <div class="title">Pa</div>
+                    <div class="description"><label id="pansy"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_100" class="module-border-wrap slytherin">
+            <div class="module-element">
+                <div id="element_100_content" class="module-element-content">
+                    <div class="title">U</div>
+                    <div class="description"><label id="umbridge"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_101" class="module-border-wrap ghost">
+            <div class="module-element">
+                <div id="element_101_content" class="module-element-content">
+                    <div class="title">Np</div>
+                    <div class="description"><label id="nicholas"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_102" class="module-border-wrap muggle">
+            <div class="module-element">
+                <div id="element_102_content" class="module-element-content">
+                    <div class="title">Pu</div>
+                    <div class="description"><label id="petunia"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_103" class="module-border-wrap slytherin">
+            <div class="module-element">
+                <div id="element_103_content" class="module-element-content">
+                    <div class="title">Am</div>
+                    <div class="description"><label id="andromeda"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_104" class="module-border-wrap ravenclaw">
+            <div class="module-element">
+                <div id="element_104_content" class="module-element-content">
+                    <div class="title">Cm</div>
+                    <div class="description"><label id="carmichael"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_105" class="module-border-wrap house">
+            <div class="module-element">
+                <div id="element_105_content" class="module-element-content">
+                    <div class="title">Bk</div>
+                    <div class="description"><label id="black"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_106" class="module-border-wrap unknown">
+            <div class="module-element">
+                <div id="element_106_content" class="module-element-content">
+                    <div class="title">Cf</div>
+                    <div class="description"><label id="crockford"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_107" class="module-border-wrap ministry">
+            <div class="module-element">
+                <div id="element_107_content" class="module-element-content">
+                    <div class="title">Es</div>
+                    <div class="description"><label id="elphias"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_108" class="module-border-wrap unknown">
+            <div class="module-element">
+                <div id="element_108_content" class="module-element-content">
+                    <div class="title">Fm</div>
+                    <div class="description">
+                        <lable id="flamel"></lable>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_109" class="module-border-wrap ministry">
+            <div class="module-element">
+                <div id="element_109_content" class="module-element-content">
+                    <div class="title">Md</div>
+                    <div class="description"><label id="moody"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_110" class="module-border-wrap unknown">
+            <div class="module-element">
+                <div id="element_110_content" class="module-element-content">
+                    <div class="title">No</div>
+                    <div class="description"><label id="norris"></label></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="element_111" class="module-border-wrap gryffindor">
+            <div class="module-element">
+                <div id="element_111_content" class="module-element-content">
+                    <div class="title">Lr</div>
+                    <div class="description"><label id="lee"></label></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay">
+        <nav class="overlay-menu">
+            <p>The Harry Potter series is an absolute fan favorite all over the world.</p>
+            <p>And growing up, like it or not, we have all had our encounters with the periodic table.</p>
+            <p>So for all the people who are self-proclaimed fans of the Harry Potter fandom, test your knowledge right
+                here. 🎯</p>
+            <p>An amalgamation of wizard magic and chemistry magic, this surely will lighten up your mood and bring a
+                smile to your faces.</p>
+            <p>Dedicated especially to a friend of mine and her sister 🙌🏼 who are the craziest Harry Potter fans I've
+                come across.</p>
+            <p>So what are you waiting for ?</p>
+            <p id="swish">Swish and Flick 🎆</p>
+            <br>
+            <button id="overlay-close-button" onclick="closeModal()"><span>Close</span></button>
+        </nav>
+    </div>
+
+    <footer>
+        <p style="padding-bottom: 2px;">Handcrafted with
+            <span style="color: red">
+                <i class="fa fa-heart" aria-hidden="true"></i>
+            </span>
+            by <a href="https://github.com/rahul-kabra" target="_blank">Rahul</a></p>
+        <p style="padding-top: 2px;" id="github-link">
+            <a href="https://rahul-kabra.github.io/harry-potter-quiz/" target="_blank">
+                <span>Fork on Github
+                    <i class="fa fa-github"></i>
+                </span></i>
+            </a>
+        </p>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./app.js" type="text/javascript"></script>
+</body>
+
+</html>
