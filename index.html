@@ -13,16 +13,242 @@
 <body>
     <div id="navbar-container">
         <h1>🔮 Harry Potter Quiz 🔮</h1>
-        <div id="solutions">
-            <p><span class="fa fa-question-circle"></span></p>
+        <div id="solutions" onclick="showClues()">
+            <p>
+                <span id="clues" class="fa fa-lock"></span>
+            </p>
         </div>
         <div id="theme" onclick="toggleThemeMode()">
-            <p><span class="fa fa-adjust"></span></p>
+            <p>
+                <span id="mode" class="fa fa-sun-o"></span>
+            </p>
         </div>
         <div id="about">
             <p><span class="fa fa-info-circle"></span></p>
         </div>
     </div>
+
+    <div id="solution-container">
+        <div id="solution-inner-container">
+            <h3>Welcome, Potter Nerds</h3>
+            <h4>This is a simple quiz comprising of Harry Potter characters whose names have been arranged in a way that
+                matches the elements in a periodic table. Your job, is to figure out all the 111 characters.</h4>
+            <p>If this sounds a tad difficult, here's something that might help you guess the names.</p>
+            <p>The character list includes the following names belonging to the different categories/houses: </p>
+            <div id="solution-count-container">
+                <div id="gryffindor-count" class="module-border-wrap gryffindor">
+                    <div class="module-element">
+                        <div id="gryffindor-count_content" class="module-element-content">
+                            <div id="gryffindor-answer-count" class="title">26</div>
+                            <div class="description">
+                                <label>Gryffindor</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="hufflepuff-count" class="module-border-wrap hufflepuff">
+                    <div class="module-element">
+                        <div id="hufflepuff-count_content" class="module-element-content">
+                            <div id="hufflepuff-answer-count" class="title">6</div>
+                            <div class="description">
+                                <label>Hufflepuff</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="ravenclaw-count" class="module-border-wrap ravenclaw">
+                    <div class="module-element">
+                        <div id="ravenclaw-count_content" class="module-element-content">
+                            <div id="ravenclaw-answer-count" class="title">11</div>
+                            <div class="description">
+                                <label>Ravenclaw</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="slytherin-count" class="module-border-wrap slytherin">
+                    <div class="module-element">
+                        <div id="slytherin-count_content" class="module-element-content">
+                            <div id="slytherin-answer-count" class="title">15</div>
+                            <div class="description">
+                                <label>Slytherin</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="ministry-count" class="module-border-wrap ministry">
+                    <div class="module-element">
+                        <div id="ministry-count_content" class="module-element-content">
+                            <div id="ministry-answer-count" class="title">12</div>
+                            <div class="description">
+                                <label>Ministry</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="centaur-count" class="module-border-wrap centaur">
+                    <div class="module-element">
+                        <div id="centaur-count_content" class="module-element-content">
+                            <div id="centaur-answer-count" class="title">2</div>
+                            <div class="description">
+                                <label>Centaur</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="death-eater-count" class="module-border-wrap death-eater">
+                    <div class="module-element">
+                        <div id="death-eater-count_content" class="module-element-content">
+                            <div id="death-eater-answer-count" class="title">3</div>
+                            <div class="description">
+                                <label>Death-eater</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="ghost-count" class="module-border-wrap ghost">
+                    <div class="module-element">
+                        <div id="ghost-count_content" class="module-element-content">
+                            <div id="ghost-answer-count" class="title">2</div>
+                            <div class="description">
+                                <label>Ghost</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="teacher-count" class="module-border-wrap teacher">
+                    <div class="module-element">
+                        <div id="teacher-count_content" class="module-element-content">
+                            <div id="teacher-answer-count" class="title">3</div>
+                            <div class="description">
+                                <label>Teacher</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="order-count" class="module-border-wrap order">
+                    <div class="module-element">
+                        <div id="order-count_content" class="module-element-content">
+                            <div id="order-answer-count" class="title">3</div>
+                            <div class="description">
+                                <label>Order</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="houseelf-count" class="module-border-wrap houseelf">
+                    <div class="module-element">
+                        <div id="houseelf-count_content" class="module-element-content">
+                            <div id="houseelf-answer-count" class="title">2</div>
+                            <div class="description">
+                                <label>House Elf</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="beaubaxtons-count" class="module-border-wrap beaubaxtons">
+                    <div class="module-element">
+                        <div id="beaubaxtons-count_content" class="module-element-content">
+                            <div id="beaubaxtons-answer-count" class="title">2</div>
+                            <div class="description">
+                                <label>Beauxbatons</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="durmstrang-count" class="module-border-wrap durmstrang">
+                    <div class="module-element">
+                        <div id="durmstrang-count_content" class="module-element-content">
+                            <div id="durmstrang-answer-count" class="title">3</div>
+                            <div class="description">
+                                <label>Durmstrang</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="muggle-count" class="module-border-wrap muggle">
+                    <div class="module-element">
+                        <div id="muggle-count_content" class="module-element-content">
+                            <div id="muggle-answer-count" class="title">4</div>
+                            <div class="description">
+                                <label>Muggle</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="house-count" class="module-border-wrap house">
+                    <div class="module-element">
+                        <div id="house-count_content" class="module-element-content">
+                            <div id="house-answer-count" class="title">2</div>
+                            <div class="description">
+                                <label>House</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="creatures-count" class="module-border-wrap creatures">
+                    <div class="module-element">
+                        <div id="creatures-count_content" class="module-element-content">
+                            <div id="creatures-answer-count" class="title">2</div>
+                            <div class="description">
+                                <label>Creatures</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="horcrux-count" class="module-border-wrap horcrux">
+                    <div class="module-element">
+                        <div id="horcrux-count_content" class="module-element-content">
+                            <div id="horcrux-answer-count" class="title">1</div>
+                            <div class="description">
+                                <label>Horcrux</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="unknown-count" class="module-border-wrap unknown">
+                    <div class="module-element">
+                        <div id="unknown-count_content" class="module-element-content">
+                            <div id="unknown-answer-count" class="title">11</div>
+                            <div class="description">
+                                <label>Unknown</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p>Both the count and the border color will help in identifying the correct names.</p>
+            <p>With every correct answer, the category count will keep decreasing until it reaches zero.</p>
+
+            <p>For the periodic table below, every correct answer will reveal the character name and the element
+                background will be filled with the category colors.</p>
+
+            <p>If this still sounds difficult, then clicking on the <span><i class="fa fa-lock"></i></span> icon will
+                reveal clues. Hover over the elements to see the clues and answer. Click on the <span><i
+                        class="fa fa-unlock-alt"></i></span> to hide the clues back.</p>
+
+            <p>Scroll below to answer. Happy hunting!!!</p>
+        </div>
+    </div>
+
     <div id="data-container">
         <div id="input-container" class="input-field">
             <label>
@@ -136,7 +362,7 @@
             </div>
         </div>
 
-        <div id="element_9" class="module-border-wrap beauxbatons">
+        <div id="element_9" class="module-border-wrap beaubaxtons">
             <div class="module-element">
                 <div id="element_9_content" class="module-element-content">
                     <div class="title">F</div>
@@ -195,11 +421,11 @@
             </div>
         </div>
 
-        <div id="element_15" class="module-border-wrap unknown">
+        <div id="element_15" class="module-border-wrap gryffindor">
             <div class="module-element">
                 <div id="element_15_content" class="module-element-content">
                     <div class="title">P</div>
-                    <div class="description"><label id="percival"></label></div>
+                    <div class="description"><label id="percy"></label></div>
                 </div>
             </div>
         </div>
@@ -313,7 +539,7 @@
             </div>
         </div>
 
-        <div id="element_28" class="module-border-wrap creatures">
+        <div id="element_28" class="module-border-wrap horcrux">
             <div class="module-element">
                 <div id="element_28_content" class="module-element-content">
                     <div class="title">Ni</div>
@@ -340,7 +566,7 @@
             </div>
         </div>
 
-        <div id="element_31" class="module-border-wrap slytherin">
+        <div id="element_31" class="module-border-wrap house">
             <div class="module-element">
                 <div id="element_31_content" class="module-element-content">
                     <div class="title">Ga</div>
@@ -358,7 +584,7 @@
             </div>
         </div>
 
-        <div id="element_33" class="module-border-wrap teachers">
+        <div id="element_33" class="module-border-wrap teacher">
             <div class="module-element">
                 <div id="element_33_content" class="module-element-content">
                     <div class="title">As</div>
@@ -476,7 +702,7 @@
             </div>
         </div>
 
-        <div id="element_46" class="module-border-wrap gryffindor">
+        <div id="element_46" class="module-border-wrap ravenclaw">
             <div class="module-element">
                 <div id="element_46_content" class="module-element-content">
                     <div class="title">Pd</div>
@@ -921,7 +1147,7 @@
             </div>
         </div>
 
-        <div id="element_95" class="module-border-wrap teachers">
+        <div id="element_95" class="module-border-wrap teacher">
             <div class="module-element">
                 <div id="element_95_content" class="module-element-content">
                     <div class="title">Yb</div>
@@ -940,7 +1166,7 @@
         </div>
 
         <!-- Row 9 -->
-        <div id="element_97" class="module-border-wrap teachers">
+        <div id="element_97" class="module-border-wrap teacher">
             <div class="module-element">
                 <div id="element_97_content" class="module-element-content">
                     <div class="title">Ac</div>
@@ -1039,7 +1265,7 @@
             </div>
         </div>
 
-        <div id="element_108" class="module-border-wrap unknown">
+        <div id="element_108" class="module-border-wrap beaubaxtons">
             <div class="module-element">
                 <div id="element_108_content" class="module-element-content">
                     <div class="title">Fm</div>
@@ -1102,7 +1328,7 @@
             </span>
             by <a href="https://github.com/rahul-kabra" target="_blank">Rahul</a></p>
         <p style="padding-top: 2px;" id="github-link">
-            <a href="https://github.com/rahul-kabra/harry-potter-quiz" target="_blank">
+            <a href="https://rahul-kabra.github.io/harry-potter-quiz/" target="_blank">
                 <span>Fork on Github
                     <i class="fa fa-github"></i>
                 </span></i>
@@ -1111,6 +1337,7 @@
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./data.js" type="text/javascript"></script>
     <script src="./app.js" type="text/javascript"></script>
 </body>
 
