@@ -41,6 +41,27 @@ html[data-theme='light'] {
   box-sizing: border-box;
 }
 
+/* Firefox Scrollbar Hack */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #F691D3 #fbf4f9;
+}
+
+/* Chrome/Edge/Safari Scrollbar Hack */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #fbf4f9;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #F691D3;
+  border-radius: 20px;
+  border: 3px solid #fbf4f9;
+}
+
 body {
   background: var(--color-elements-background);
 }
@@ -63,7 +84,7 @@ a {
   display: grid;
   grid-column: 4;
   grid-template-columns: 1fr auto auto auto;
-  background: #a4a4f9;
+  background: #8db2f4;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -88,8 +109,8 @@ a {
 
 #solution-inner-container {
   padding: 5px 7px;
-  background: ivory;
-  color: #8366ae;
+  background: #fbf4f9;
+  color: #f38b9d;
   font-family: "Pacifico", cursive;
 }
 
@@ -117,8 +138,9 @@ a {
   grid-column: 2;
   grid-template-columns: 200px auto;
   justify-content: center;
-  background-color: beige;
+  background-color: #fbf4f9;
   height: 50px;
+  color: #f38b9d;
 }
 
 #input-container>label {
@@ -483,7 +505,8 @@ a.module-element {
 
 .overlay {
   position: fixed;
-  background: #8366ae;
+  background: #f38b9d;
+  color: white;
   top: 0;
   left: 0;
   width: 100%;
@@ -552,10 +575,7 @@ footer {
   text-align: center;
   margin-top: 2em;
   width: 100%;
-  position: sticky;
-  bottom: 0;
-  z-index: 10;
-  background: #a4a4f9;
+  background: #8db2f4;
   font-family: "Pacifico", cursive;
 }
 
